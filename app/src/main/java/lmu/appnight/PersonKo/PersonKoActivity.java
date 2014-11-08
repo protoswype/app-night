@@ -128,6 +128,15 @@ public final class PersonKoActivity extends Activity {
         return super.onMenuItemSelected(featureId, item);
     }
 
+    public void dialPhoneNumber(String phoneNumber) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phoneNumber));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+
     private void setCardScrollerListener() {
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -140,7 +149,7 @@ public final class PersonKoActivity extends Activity {
                         startActivity(new Intent(PersonKoActivity.this, PersonKoExplanationActivity.class));
                         break;
                     case CALL_AMBULANCE:
-                        startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+4915168119321")));
+                        dialPhoneNumber("+4917665550740");
                         break;
                     default:
                         soundEffect = Sounds.ERROR;

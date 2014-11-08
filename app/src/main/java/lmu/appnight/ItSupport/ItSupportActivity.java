@@ -25,13 +25,8 @@ import lmu.appnight.FirstAidKit.FirstAidKitActivity;
 import lmu.appnight.MainActivity;
 import lmu.appnight.R;
 
-/**
- * Created by sebastianbinder on 08.11.14.
- */
 public final class ItSupportActivity extends Activity {
 
-
-    private CardScrollAdapter mAdapter;
     private CardScrollView mCardScroller;
 
     private boolean mVoiceMenuEnabled = true;
@@ -39,7 +34,6 @@ public final class ItSupportActivity extends Activity {
     static final int NETWORK = 0;
     static final int PRINTER = 1;
     static final int COMPUTER = 2;
-
 
     @Override
     protected void onCreate(Bundle bundle) {
