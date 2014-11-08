@@ -1,4 +1,4 @@
-package lmu.appnight;
+package com.example.sebastianbinder.myapplication;
 
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardBuilder;
@@ -23,7 +23,7 @@ import android.widget.AdapterView;
  *
  * @see <a href="https://developers.google.com/glass/develop/gdk/touch">GDK Developer Guide</a>
  */
-public class MainActivity extends Activity {
+public class SecondActivity extends Activity {
 
     /**
      * {@link CardScrollView} to use as the main content view.
