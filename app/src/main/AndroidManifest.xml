@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="lmu.appnight" >
-    <uses-permission
-        android:name="com.google.android.glass.permission.DEVELOPMENT" />
+    package="lmu.appnight">
+
+    <uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="lmu.appnight.MainActivity"
             android:icon="@drawable/ic_glass_logo"
-            android:label="@string/main_menu_app_name" >
+            android:label="@string/main_menu_app_name">
             <intent-filter>
                 <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
             </intent-filter>
@@ -31,6 +31,12 @@
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/main_voice_trigger" />
         </activity>
+
+        <activity
+            android:name=".PersonKoExplanation.PersonKoExplanationActivity"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="@string/person_ko_menu_text"></activity>
+
         <activity
             android:name=".FirstAidKit.FirstAidKitActivity"
             android:icon="@drawable/ic_glass_logo"

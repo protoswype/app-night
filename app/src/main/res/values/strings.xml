@@ -11,6 +11,11 @@
     <string name="main_menu_app_name">Help</string>
 
     <string name="person_ko_menu_text">Person K.O.</string>
+    <string name="person_ko_menu_desc">Help a person which is not breathing.</string>
+
+    <string name="revive_check">Person K.O.</string>
+    <string name="revive_breath">Help a person which is not breathing.</string>
+    <string name="revive_massage">Help a person which is not breathing.</string>
 
     <string name="hungry_menu_text">I\'m Starving!</string>
     <string name="hungry_text">Just grab some of the fabulous free food at the Lichthof. Open daily from 8.30 am to 1.30 am!</string>
