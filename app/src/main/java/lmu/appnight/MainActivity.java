@@ -1,5 +1,6 @@
 package lmu.appnight;
 
+import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
@@ -7,11 +8,15 @@ import com.google.android.glass.media.Sounds;
 
 
 import android.app.Activity;
+import android.net.Uri;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 
 import java.util.ArrayList;
@@ -45,9 +50,63 @@ public final class MainActivity extends Activity {
 
 
 
+    private int mPicture = 0;
+    private boolean mVoiceMenuEnabled = true;
+
+    static final int PERSON_KO = 0;
+    static final int FIRST_AID = 1;
+    static final int EMERGENCY_EXIT = 2;
+    static final int HUNGRY = 3;
 
 
     @Override
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+
+        // Requests a voice menu on this activity. As for any other window feature,
+        // be sure to request this before setContentView() is called
+        getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
+
+        // Ensure screen stays on during demo.
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        // Sets up a singleton card scroller as content of this activity. Clicking
+        // on the card toggles the voice menu on and off.
+        mCardScroller = new CardScrollView(this);
+        mCardScroller.setAdapter(new CardAdapter(createMainMenu(this)));
+        mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Plays sound.
+                AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                am.playSoundEffect(Sounds.TAP);
+                // Toggles voice menu. Invalidates menu to flag change.
+                mVoiceMenuEnabled = !mVoiceMenuEnabled;
+                getWindow().invalidatePanelMenu(WindowUtils.FEATURE_VOICE_COMMANDS);
+            }
+        });
+        setContentView(mCardScroller);
+        setCardScrollerListener();
+    }
+
+    @Override
+    public boolean onCreatePanelMenu(int featureId, Menu menu) {
+        if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
+            getMenuInflater().inflate(R.menu.voice_menu, menu);
+            return true;
+        }
+        // Pass through to super to setup touch menu.
+        return super.onCreatePanelMenu(featureId, menu);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.voice_menu, menu);
+        return true;
+    }
+
+
+   /* @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
@@ -58,11 +117,7 @@ public final class MainActivity extends Activity {
         setCardScrollerListener();
     }
 
-
-    static final int PERSON_KO = 0;
-    static final int FIRST_AID = 1;
-    static final int EMERGENCY_EXIT = 2;
-    static final int HUNGRY = 3;
+*/
 
 
     /**
@@ -91,21 +146,6 @@ public final class MainActivity extends Activity {
         return cards;
     }
 
-
-
-
-
-    private List<CardBuilder> createHungryLocationsMenu(Context context) {
-        ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
-
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
-                .setText(R.string.hungry_text)
-                .addImage(R.drawable.img_hungry)
-                .setFootnote(R.string.hungry_desc));
-
-        return cards;
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -116,6 +156,39 @@ public final class MainActivity extends Activity {
     protected void onPause() {
         mCardScroller.deactivate();
         super.onPause();
+    }
+
+
+
+    @Override
+    public boolean onPreparePanel(int featureId, View view, Menu menu) {
+        if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
+            // Dynamically decides between enabling/disabling voice menu.
+            return mVoiceMenuEnabled;
+        }
+        // Good practice to pass through, for options menu.
+        return super.onPreparePanel(featureId, view, menu);
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
+            switch (item.getItemId()) {
+                case R.id.menu_designer:
+                    startActivity(new Intent(MainActivity.this, PersonKoActivity.class));
+                    break;
+                case R.id.menu_coder:
+                    startActivity(new Intent(MainActivity.this, FirstAidKitActivity.class));
+                    break;
+                case R.id.menu_product:
+                    startActivity(new Intent(MainActivity.this, HungryActivity.class));
+                    break;
+                default: return true;  // No change.
+            }
+            mCardScroller.setAdapter(new CardAdapter(createMainMenu(this)));
+            return true;
+        }
+        return super.onMenuItemSelected(featureId, item);
     }
 
     /**
@@ -132,9 +205,11 @@ public final class MainActivity extends Activity {
                     case PERSON_KO:
                         startActivity(new Intent(MainActivity.this, PersonKoActivity.class));
                         break;
-
                     case FIRST_AID:
                         startActivity(new Intent(MainActivity.this, FirstAidKitActivity.class));
+                        break;
+                    case EMERGENCY_EXIT:
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:ll=48.128623,11.563547&mode=w")));
                         break;
                     case HUNGRY:
                         startActivity(new Intent(MainActivity.this, HungryActivity.class));
@@ -150,5 +225,7 @@ public final class MainActivity extends Activity {
             }
         });
     }
+
+
 
 }
