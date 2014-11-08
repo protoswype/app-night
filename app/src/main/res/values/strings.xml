@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Appnight</string>
+    <string name="main_menu_app_name">Help!</string>
+    <string name="person_ko_menu_text">Person K.O.</string>
+    <string name="person_ko_menu_desc">How can I help an unconscious person?</string>
+    <string name="first_aid_kit_menu_text">First Aid</string>
+    <string name="first_aid_kit_menu_desc">Where can I find a first aid kit?</string>
+    <string name="emergency_exit_menu_text">Emergency Exit</string>
+    <string name="emergency_exit_menu_desc">How can I quickly get out of here?</string>
+
+</resources>
