@@ -1,4 +1,4 @@
-package lmu.appnight;
+package lmu.appnight.Classes;
 
 /**
  * Created by sebastianbinder on 08.11.14.

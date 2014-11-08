@@ -17,6 +17,11 @@ import android.widget.AdapterView;
 import java.util.ArrayList;
 import java.util.List;
 
+import lmu.appnight.Classes.CardAdapter;
+import lmu.appnight.FirstAidKit.FirstAidKitActivity;
+import lmu.appnight.Hungry.HungryActivity;
+import lmu.appnight.PersonKo.PersonKoActivity;
+
 
 /**
  * An {@link Activity} showing a tuggable "Hello World!" card.
@@ -88,16 +93,7 @@ public final class MainActivity extends Activity {
 
 
 
-    private List<CardBuilder> createFirstAidMainLocationsMenu(Context context) {
-        ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
 
-        cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
-                .setText(R.string.first_aid_main_entrance_text)
-                .addImage(R.drawable.img_first_aid_main_entrance)
-                .setFootnote(R.string.first_aid_main_entrance_desc));
-
-        return cards;
-    }
 
     private List<CardBuilder> createHungryLocationsMenu(Context context) {
         ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
@@ -134,17 +130,14 @@ public final class MainActivity extends Activity {
                 int soundEffect = Sounds.TAP;
                 switch (position) {
                     case PERSON_KO:
-                        //mCardScroller.setAdapter(new CardAdapter(createPersonKoMenu(this)));
-                        //new CardAdapter(createPersonKoMenu(this));
                         startActivity(new Intent(MainActivity.this, PersonKoActivity.class));
                         break;
-                    case EMERGENCY_EXIT:
-                        //mCardScroller.setAdapter(new CardAdapter(createMainMenu(this)));
-                        //startActivity(new Intent(MainActivity.this, MainActivity.class));
-                        break;
+
                     case FIRST_AID:
-                        //mCardScroller.setAdapter(new CardAdapter(createMainMenu(this)));
-                        //startActivity(new Intent(MainActivity.this, MainActivity.class));
+                        startActivity(new Intent(MainActivity.this, FirstAidKitActivity.class));
+                        break;
+                    case HUNGRY:
+                        startActivity(new Intent(MainActivity.this, HungryActivity.class));
                         break;
                     default:
                         soundEffect = Sounds.ERROR;
