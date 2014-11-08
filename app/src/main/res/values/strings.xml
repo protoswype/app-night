@@ -3,11 +3,27 @@
 
     <string name="app_name">Appnight</string>
     <string name="main_menu_app_name">Help!</string>
+
     <string name="person_ko_menu_text">Person K.O.</string>
     <string name="person_ko_menu_desc">How can I help an unconscious person?</string>
+
+    <string name="hungry_menu_text">I\'m Starving!</string>
+    <string name="hungry_menu_desc">Where can I get something to eat?</string>
+    <string name="hungry_text">Just grab some of the fabulous free food at the Lichthof.</string>
+    <string name="hungry_desc"></string>
+
     <string name="first_aid_kit_menu_text">First Aid</string>
     <string name="first_aid_kit_menu_desc">Where can I find a first aid kit?</string>
+    <string name="first_aid_main_entrance_text">You will find a first aid kit at the information desk at the main entrance.</string>
+    <string name="first_aid_main_entrance_desc"></string>
+
     <string name="emergency_exit_menu_text">Emergency Exit</string>
     <string name="emergency_exit_menu_desc">How can I quickly get out of here?</string>
+
+    <string name="recovery_position_menu_text">Recovery Position</string>
+    <string name="recovery_position_menu_desc">How does the recovery position look like?</string>
+
+    <string name="emergency_call_menu_text">Emergency Call</string>
+    <string name="emergency_call_menu_desc">Call the Ambulance!</string>
 
 </resources>

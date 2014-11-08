@@ -19,6 +19,18 @@
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/voice_trigger" />
         </activity>
+        <activity
+            android:name="lmu.appnight.PersonKoActivity"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="@string/main_menu_app_name" >
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/voice_trigger" />
+        </activity>
     </application>
 
 </manifest>
