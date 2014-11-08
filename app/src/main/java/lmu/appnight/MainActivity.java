@@ -25,6 +25,7 @@ import java.util.List;
 import lmu.appnight.Classes.CardAdapter;
 import lmu.appnight.FirstAidKit.FirstAidKitActivity;
 import lmu.appnight.Hungry.HungryActivity;
+import lmu.appnight.ItSupport.ItSupportActivity;
 import lmu.appnight.PersonKo.PersonKoActivity;
 
 
@@ -48,15 +49,13 @@ public final class MainActivity extends Activity {
     private CardScrollAdapter mAdapter;
     private CardScrollView mCardScroller;
 
-
-
-    private int mPicture = 0;
     private boolean mVoiceMenuEnabled = true;
 
     static final int PERSON_KO = 0;
     static final int FIRST_AID = 1;
     static final int EMERGENCY_EXIT = 2;
     static final int HUNGRY = 3;
+    static final int IT_SUPPORT = 4;
 
 
     @Override
@@ -105,21 +104,6 @@ public final class MainActivity extends Activity {
         return true;
     }
 
-
-   /* @Override
-    protected void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-
-        mAdapter = new CardAdapter(createMainMenu(this));
-        mCardScroller = new CardScrollView(this);
-        mCardScroller.setAdapter(mAdapter);
-        setContentView(mCardScroller);
-        setCardScrollerListener();
-    }
-
-*/
-
-
     /**
      * Creates list of cards that showcase different type of {@link CardBuilder} API.
     */
@@ -129,19 +113,23 @@ public final class MainActivity extends Activity {
         cards.add(PERSON_KO, new CardBuilder(context, CardBuilder.Layout.MENU)
                 .setText(R.string.person_ko_menu_text)
                 .setIcon(R.drawable.ic_person_ko_menu)
-                .setFootnote(R.string.person_ko_menu_desc));
+                );
         cards.add(FIRST_AID, new CardBuilder(context, CardBuilder.Layout.MENU)
                 .setText(R.string.first_aid_kit_menu_text)
                 .setIcon(R.drawable.ic_first_aid_kit_menu)
-                .setFootnote(R.string.first_aid_kit_menu_desc));
+                );
         cards.add(EMERGENCY_EXIT, new CardBuilder(context, CardBuilder.Layout.MENU)
                 .setText(R.string.emergency_exit_menu_text)
                 .setIcon(R.drawable.ic_emergency_exit_menu)
-                .setFootnote(R.string.emergency_exit_menu_desc));
+                );
         cards.add(HUNGRY, new CardBuilder(context, CardBuilder.Layout.MENU)
                 .setText(R.string.hungry_menu_text)
                 .setIcon(R.drawable.ic_hungry_menu)
-                .setFootnote(R.string.hungry_menu_desc));
+                );
+        cards.add(IT_SUPPORT, new CardBuilder(context, CardBuilder.Layout.MENU)
+                        .setText(R.string.it_support_menu_text)
+                //.setIcon(R.drawable.ic_it_support_menu)
+        );
 
         return cards;
     }
@@ -163,10 +151,8 @@ public final class MainActivity extends Activity {
     @Override
     public boolean onPreparePanel(int featureId, View view, Menu menu) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
-            // Dynamically decides between enabling/disabling voice menu.
             return mVoiceMenuEnabled;
         }
-        // Good practice to pass through, for options menu.
         return super.onPreparePanel(featureId, view, menu);
     }
 
@@ -174,16 +160,19 @@ public final class MainActivity extends Activity {
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
             switch (item.getItemId()) {
-                case R.id.menu_designer:
+                case R.id.menu_person_ko:
                     startActivity(new Intent(MainActivity.this, PersonKoActivity.class));
                     break;
-                case R.id.menu_coder:
+                case R.id.menu_first_aid:
                     startActivity(new Intent(MainActivity.this, FirstAidKitActivity.class));
                     break;
-                case R.id.menu_product:
+                case R.id.menu_hungry:
                     startActivity(new Intent(MainActivity.this, HungryActivity.class));
                     break;
-                default: return true;  // No change.
+                case R.id.menu_it_support:
+                    startActivity(new Intent(MainActivity.this, ItSupportActivity.class));
+                    break;
+                default: return true;
             }
             mCardScroller.setAdapter(new CardAdapter(createMainMenu(this)));
             return true;

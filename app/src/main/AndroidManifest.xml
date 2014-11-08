@@ -16,46 +16,56 @@
                 <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
             </intent-filter>
 
-            <meta-data
-                android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/main_voice_trigger" />
+
 
         </activity>
         <activity
             android:name=".PersonKo.PersonKoActivity"
             android:icon="@drawable/ic_glass_logo"
-            android:label="@string/person_ko_menu_text" >
+            android:label="@string/person_ko_trigger" >
             <intent-filter>
                 <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
             </intent-filter>
 
             <meta-data
                 android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/person_ko_voice_trigger" />
+                android:resource="@xml/main_voice_trigger" />
         </activity>
         <activity
             android:name=".FirstAidKit.FirstAidKitActivity"
             android:icon="@drawable/ic_glass_logo"
-            android:label="@string/first_aid_kit_menu_text" >
+            android:label="@string/first_aid_kit_trigger" >
             <intent-filter>
                 <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
             </intent-filter>
 
             <meta-data
                 android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/first_aid_voice_trigger" />
+                android:resource="@xml/main_voice_trigger" />
         </activity>
         <activity
             android:name=".Hungry.HungryActivity"
             android:icon="@drawable/ic_glass_logo"
-            android:label="@string/hungry_menu_text" >
+            android:label="@string/hungry_trigger" >
             <intent-filter>
                 <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
             </intent-filter>
 
             <meta-data
                 android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/hungry_voice_trigger" />
+                android:resource="@xml/main_voice_trigger" />
+        </activity>
+        <activity
+            android:name=".ItSupport.ItSupportActivity"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="@string/it_support_trigger" >
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/main_voice_trigger" />
         </activity>
     </application>
 

@@ -41,12 +41,10 @@ public final class PersonKoActivity extends Activity {
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.MENU)
                 .setText(R.string.recovery_position_menu_text)
-                .setIcon(R.drawable.ic_person_ko_menu)
-                .setFootnote(R.string.recovery_position_menu_desc));
+                .setIcon(R.drawable.ic_person_ko_menu));
         cards.add(new CardBuilder(context, CardBuilder.Layout.MENU)
                 .setText(R.string.emergency_call_menu_text)
-                .setIcon(R.drawable.ic_emergency_call_menu)
-                .setFootnote(R.string.emergency_call_menu_desc));
+                .setIcon(R.drawable.ic_emergency_call_menu));
 
         return cards;
     }

@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="voice_trigger">end a run</string>
+    <string name="voice_trigger">Help me!</string>
+    <string name="person_ko_trigger">Person not breathing</string>
+    <string name="first_aid_kit_trigger">First Aid Kit</string>
+    <string name="emergency_exit_trigger">Emergency Exit</string>
+    <string name="hungry_trigger">I\'m starving</string>
+    <string name="it_support_trigger">IT Support</string>
 
     <string name="app_name">Appnight</string>
     <string name="main_menu_app_name">Help</string>
 
     <string name="person_ko_menu_text">Person K.O.</string>
-    <string name="person_ko_menu_desc">How can I help an unconscious person?</string>
 
     <string name="hungry_menu_text">I\'m Starving!</string>
-    <string name="hungry_menu_desc">Where can I get something to eat?</string>
-    <string name="hungry_text">Just grab some of the fabulous free food at the Lichthof.</string>
-    <string name="hungry_desc">b</string>
+    <string name="hungry_text">Just grab some of the fabulous free food at the Lichthof. Open daily from 8.30 am to 1.30 am!</string>
+    <string name="hungry_mcd_text">Find the next McDonalds!</string>
 
     <string name="first_aid_kit_menu_text">First Aid</string>
     <string name="first_aid_kit_menu_desc">Where can I find a first aid kit?</string>
     <string name="first_aid_main_entrance_text">You will find a first aid kit at the information desk at the main entrance.</string>
-    <string name="first_aid_main_entrance_desc">b</string>
 
     <string name="emergency_exit_menu_text">Emergency Exit</string>
-    <string name="emergency_exit_menu_desc">How can I quickly get out of here?</string>
 
     <string name="recovery_position_menu_text">Recovery Position</string>
-    <string name="recovery_position_menu_desc">How does the recovery position look like?</string>
 
     <string name="emergency_call_menu_text">Emergency Call</string>
-    <string name="emergency_call_menu_desc">Call the Ambulance!</string>
+
+    <string name="it_support_menu_text">IT Support</string>
+    <string name="it_support_network_menu_text">Network Issues</string>
+    <string name="it_support_printer_menu_text">Printer Issues</string>
+    <string name="it_support_computer_menu_text">Computer Issues</string>
 
 </resources>

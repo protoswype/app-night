@@ -40,8 +40,7 @@ public final class FirstAidKitActivity extends Activity {
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                 .setText(R.string.first_aid_main_entrance_text)
-                .addImage(R.drawable.img_first_aid_main_entrance)
-                .setFootnote(R.string.first_aid_main_entrance_desc));
+                .addImage(R.drawable.img_first_aid_main_entrance));
 
         return cards;
     }
