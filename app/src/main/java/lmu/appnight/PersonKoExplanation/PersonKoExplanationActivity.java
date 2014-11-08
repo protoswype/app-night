@@ -1,4 +1,4 @@
-package lmu.appnight.PersonKo;
+package lmu.appnight.PersonKoExplanation;
 
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -15,16 +15,12 @@ import java.util.List;
 import lmu.appnight.Classes.CardAdapter;
 import lmu.appnight.R;
 
-/**
- * Created by sebastianbinder on 08.11.14.
- */
-public final class PersonKoActivity extends Activity {
+public final class PersonKoExplanationActivity extends Activity {
 
 
     private CardScrollAdapter mAdapter;
     private CardScrollView mCardScroller;
 
-    static final int PERSON_KO_EXPLANATION = 0;
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -40,17 +36,18 @@ public final class PersonKoActivity extends Activity {
     private List<CardBuilder> createMenu(Context context) {
         ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
 
-
-        cards.add(PERSON_KO_EXPLANATION, new CardBuilder(context, CardBuilder.Layout.MENU)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.MENU)
                 .setText(R.string.recovery_position_menu_text)
-                .setIcon(R.drawable.ic_person_ko_menu)
-                .setFootnote(R.string.person_ko_menu_desc));
-
+                .setIcon(R.drawable.person_ko_check)
+                .setFootnote(R.string.revive_check));
         cards.add(new CardBuilder(context, CardBuilder.Layout.MENU)
                 .setText(R.string.emergency_call_menu_text)
-                .setIcon(R.drawable.ic_emergency_call_menu)
-                .setFootnote(R.string.emergency_call_menu_desc));
-
+                .setIcon(R.drawable.person_ko_breath)
+                .setFootnote(R.string.revive_breath));
+        cards.add(new CardBuilder(context, CardBuilder.Layout.MENU)
+                .setText(R.string.emergency_call_menu_text)
+                .setIcon(R.drawable.person_ko_massage)
+                .setFootnote(R.string.revive_massage));
         return cards;
     }
 
