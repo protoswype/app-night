@@ -23,7 +23,6 @@ public final class FirstAidKitActivity extends Activity {
     private CardScrollAdapter mAdapter;
     private CardScrollView mCardScroller;
 
-
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -34,7 +33,6 @@ public final class FirstAidKitActivity extends Activity {
         setContentView(mCardScroller);
     }
 
-
     private List<CardBuilder> createMenu(Context context) {
         ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
 
@@ -44,7 +42,6 @@ public final class FirstAidKitActivity extends Activity {
 
         return cards;
     }
-
 
     @Override
     protected void onResume() {
@@ -57,5 +54,4 @@ public final class FirstAidKitActivity extends Activity {
         mCardScroller.deactivate();
         super.onPause();
     }
-
 }

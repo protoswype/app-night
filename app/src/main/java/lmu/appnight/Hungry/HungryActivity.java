@@ -18,22 +18,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lmu.appnight.Classes.CardAdapter;
-import lmu.appnight.FirstAidKit.FirstAidKitActivity;
-import lmu.appnight.PersonKo.PersonKoActivity;
 import lmu.appnight.R;
 
-/**
- * Created by sebastianbinder on 08.11.14.
- */
 public final class HungryActivity extends Activity {
-
 
     private CardScrollAdapter mAdapter;
     private CardScrollView mCardScroller;
 
     static final int LICHTHOF = 0;
     static final int MC_DONALDS = 1;
-
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -44,8 +37,6 @@ public final class HungryActivity extends Activity {
         mCardScroller.setAdapter(mAdapter);
         setContentView(mCardScroller);
         setCardScrollerListener();
-
-
     }
 
     private List<CardBuilder> createMenu(Context context) {
@@ -61,7 +52,6 @@ public final class HungryActivity extends Activity {
         return cards;
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -74,9 +64,6 @@ public final class HungryActivity extends Activity {
         super.onPause();
     }
 
-    /**
-     * Different type of activities can be shown, when tapped on a card.
-     */
     private void setCardScrollerListener() {
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -97,5 +84,4 @@ public final class HungryActivity extends Activity {
             }
         });
     }
-
 }
