@@ -11,7 +11,7 @@
     <string name="main_menu_app_name">Help</string>
 
     <string name="person_ko_menu_text">Person K.O.</string>
-    <string name="person_ko_menu_desc">Help a person which is not breathing.</string>
+    <string name="person_ko_menu_desc">Help a person that is not breathing.</string>
 
     <string name="revive_check">Person K.O.</string>
     <string name="revive_breath">Help a person which is not breathing.</string>
