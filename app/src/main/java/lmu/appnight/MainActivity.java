@@ -61,25 +61,15 @@ public final class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-
-        // Requests a voice menu on this activity. As for any other window feature,
-        // be sure to request this before setContentView() is called
         getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
-
-        // Ensure screen stays on during demo.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-        // Sets up a singleton card scroller as content of this activity. Clicking
-        // on the card toggles the voice menu on and off.
         mCardScroller = new CardScrollView(this);
         mCardScroller.setAdapter(new CardAdapter(createMainMenu(this)));
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Plays sound.
                 AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 am.playSoundEffect(Sounds.TAP);
-                // Toggles voice menu. Invalidates menu to flag change.
                 mVoiceMenuEnabled = !mVoiceMenuEnabled;
                 getWindow().invalidatePanelMenu(WindowUtils.FEATURE_VOICE_COMMANDS);
             }

@@ -22,8 +22,7 @@ import java.util.List;
 
 import lmu.appnight.Classes.CardAdapter;
 import lmu.appnight.FirstAidKit.FirstAidKitActivity;
-import lmu.appnight.Hungry.HungryActivity;
-import lmu.appnight.PersonKo.PersonKoActivity;
+import lmu.appnight.MainActivity;
 import lmu.appnight.R;
 
 /**
@@ -124,6 +123,9 @@ public final class ItSupportActivity extends Activity {
                         startActivity(new Intent(ItSupportActivity.this, FirstAidKitActivity.class));
                         break;
                     case COMPUTER:
+                        break;
+                    case R.id.menu_back:
+                        startActivity(new Intent(ItSupportActivity.this, MainActivity.class));
                         break;
                     default:
                         soundEffect = Sounds.ERROR;

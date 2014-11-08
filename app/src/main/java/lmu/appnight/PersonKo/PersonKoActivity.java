@@ -1,6 +1,7 @@
 package lmu.appnight.PersonKo;
 
 import com.google.android.glass.media.Sounds;
+import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
@@ -12,7 +13,10 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 
 import java.util.ArrayList;
@@ -21,6 +25,8 @@ import java.util.List;
 import lmu.appnight.Classes.CardAdapter;
 import lmu.appnight.FirstAidKit.FirstAidKitActivity;
 import lmu.appnight.Hungry.HungryActivity;
+import lmu.appnight.ItSupport.ItSupportActivity;
+import lmu.appnight.MainActivity;
 import lmu.appnight.PersonKoExplanation.PersonKoExplanationActivity;
 import lmu.appnight.R;
 
@@ -32,20 +38,45 @@ public final class PersonKoActivity extends Activity {
 
     private CardScrollAdapter mAdapter;
     private CardScrollView mCardScroller;
+    private boolean mVoiceMenuEnabled = true;
 
     static final int PERSON_KO_EXPLANATION = 0;
     static final int CALL_AMBULANCE = 1;
 
-
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-
-        mAdapter = new CardAdapter(createMenu(this));
+        getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mCardScroller = new CardScrollView(this);
-        mCardScroller.setAdapter(mAdapter);
+        mCardScroller.setAdapter(new CardAdapter(createMenu(this)));
+        mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                am.playSoundEffect(Sounds.TAP);
+                mVoiceMenuEnabled = !mVoiceMenuEnabled;
+                getWindow().invalidatePanelMenu(WindowUtils.FEATURE_VOICE_COMMANDS);
+            }
+        });
         setContentView(mCardScroller);
         setCardScrollerListener();
+    }
+
+    @Override
+    public boolean onCreatePanelMenu(int featureId, Menu menu) {
+        if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
+            getMenuInflater().inflate(R.menu.person_ko_voice_menu, menu);
+            return true;
+        }
+        // Pass through to super to setup touch menu.
+        return super.onCreatePanelMenu(featureId, menu);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.person_ko_voice_menu, menu);
+        return true;
     }
 
 
@@ -76,6 +107,27 @@ public final class PersonKoActivity extends Activity {
         super.onPause();
     }
 
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
+            switch (item.getItemId()) {
+                case R.id.menu_person_ko_reanimation:
+                    startActivity(new Intent(PersonKoActivity.this, PersonKoExplanationActivity.class));
+                    break;
+                case R.id.menu_person_ko_emergency:
+                    startActivity(new Intent(PersonKoActivity.this, FirstAidKitActivity.class));
+                    break;
+                case R.id.menu_back:
+                    startActivity(new Intent(PersonKoActivity.this, MainActivity.class));
+                    break;
+                default: return true;
+            }
+            mCardScroller.setAdapter(new CardAdapter(createMenu(this)));
+            return true;
+        }
+        return super.onMenuItemSelected(featureId, item);
+    }
+
     private void setCardScrollerListener() {
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -88,6 +140,7 @@ public final class PersonKoActivity extends Activity {
                         startActivity(new Intent(PersonKoActivity.this, PersonKoExplanationActivity.class));
                         break;
                     case CALL_AMBULANCE:
+                        startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+4915168119321")));
                         break;
                     default:
                         soundEffect = Sounds.ERROR;

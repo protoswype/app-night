@@ -82,7 +82,6 @@ public final class HungryActivity extends Activity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Log.d(TAG, "Clicked view at position " + position + ", row-id " + id);
                 int soundEffect = Sounds.TAP;
                 switch (position) {
                     case LICHTHOF:
@@ -92,10 +91,7 @@ public final class HungryActivity extends Activity {
                         break;
                     default:
                         soundEffect = Sounds.ERROR;
-                        //Log.d(TAG, "Don't show anything");
                 }
-
-                // Play sound.
                 AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 am.playSoundEffect(soundEffect);
             }

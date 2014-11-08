@@ -16,4 +16,8 @@
         android:id="@+id/menu_it_support_computer"
         android:title="@string/it_support_computer_menu_text"
     />
+    <item
+        android:id="@+id/menu_back"
+        android:title="@string/menu_go_back"
+        />
 </menu>
