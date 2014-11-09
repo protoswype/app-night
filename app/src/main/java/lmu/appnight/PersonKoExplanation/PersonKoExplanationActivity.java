@@ -84,7 +84,9 @@ public final class PersonKoExplanationActivity extends Activity {
         return cards;
     }
 
-    /** Navigates to card at given position. */
+    /**
+     * Navigates to card at given position.
+     */
     private void navigateToCard(int position) {
         mCardScroller.animate(position, CardScrollView.Animation.NAVIGATION);
     }
@@ -118,7 +120,8 @@ public final class PersonKoExplanationActivity extends Activity {
                     navigateToCard(0);
                     current_position = 0;
                     break;
-                default: return true;
+                default:
+                    return true;
             }
             mCardScroller.setAdapter(new CardAdapter(createMenu(this)));
             return true;
