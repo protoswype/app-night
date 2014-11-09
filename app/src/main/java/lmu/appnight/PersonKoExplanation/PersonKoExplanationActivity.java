@@ -9,8 +9,6 @@ import com.google.android.glass.widget.CardScrollView;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,21 +21,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lmu.appnight.Classes.CardAdapter;
-import lmu.appnight.FirstAidKit.FirstAidKitActivity;
-import lmu.appnight.MainActivity;
 import lmu.appnight.R;
 
 public final class PersonKoExplanationActivity extends Activity {
 
-
-    private CardScrollAdapter mAdapter;
     private CardScrollView mCardScroller;
 
     private boolean mVoiceMenuEnabled = true;
 
-    static final int STEP1 = 0;
-    static final int STEP2 = 1;
-    static final int STEP3 = 2;
     int current_position = 0;
 
     @Override
@@ -114,10 +105,7 @@ public final class PersonKoExplanationActivity extends Activity {
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
-
-            Log.i("PersonKoExplanationActivity", "Log: " +  current_position);
             switch (current_position) {
-
                 case 0:
                     navigateToCard(1);
                     current_position = 1;
@@ -137,6 +125,4 @@ public final class PersonKoExplanationActivity extends Activity {
         }
         return super.onMenuItemSelected(featureId, item);
     }
-
-
 }
