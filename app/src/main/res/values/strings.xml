@@ -6,6 +6,9 @@
     <string name="emergency_exit_trigger">Emergency Exit</string>
     <string name="hungry_trigger">I\'m starving</string>
     <string name="it_support_trigger">IT Support</string>
+    <string name="person_ko_reanimation_trigger">Reanimation</string>
+    <string name="person_ko_emergency_trigger">Call Emergency</string>
+    <string name="menu_next_trigger">Next</string>
 
     <string name="app_name">Appnight</string>
     <string name="main_menu_app_name">Help</string>
@@ -28,7 +31,7 @@
 
     <string name="emergency_exit_menu_text">Emergency Exit</string>
 
-    <string name="recovery_position_menu_text">Recovery Position</string>
+    <string name="recovery_position_menu_text">Reanimation</string>
 
     <string name="emergency_call_menu_text">Emergency Call</string>
 

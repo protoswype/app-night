@@ -26,6 +26,7 @@
             android:label="@string/person_ko_trigger" >
             <intent-filter>
                 <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+                <action android:name="android.intent.action.DIAL" />
             </intent-filter>
 
             <meta-data
@@ -74,6 +75,8 @@
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/main_voice_trigger" />
         </activity>
+
+
     </application>
 
 </manifest>
