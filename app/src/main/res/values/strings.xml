@@ -7,7 +7,7 @@
     <string name="hungry_trigger">I\'m starving</string>
     <string name="it_support_trigger">IT Support</string>
     <string name="person_ko_reanimation_trigger">Reanimation</string>
-    <string name="person_ko_emergency_trigger">Call Emergency</string>
+    <string name="person_ko_emergency_trigger">Video Call Emergency</string>
     <string name="menu_next_trigger">Next</string>
 
     <string name="app_name">Appnight</string>
@@ -44,5 +44,7 @@
     <string name="it_support_network_menu_text">Network Issues</string>
     <string name="it_support_printer_menu_text">Printer Issues</string>
     <string name="it_support_computer_menu_text">Computer Issues</string>
+
+    <string name="emergency_call_menu_footnote">Video Call Emergency</string>
 
 </resources>

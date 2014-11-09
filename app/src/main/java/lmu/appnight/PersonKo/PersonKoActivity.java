@@ -57,7 +57,6 @@ public final class PersonKoActivity extends Activity {
     }
 
 
-
     @Override
     public boolean onCreatePanelMenu(int featureId, Menu menu) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
@@ -78,11 +77,12 @@ public final class PersonKoActivity extends Activity {
         ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
 
 
-        cards.add(PERSON_KO_EXPLANATION, new CardBuilder(context, CardBuilder.Layout.MENU)
+        cards.add(PERSON_KO_EXPLANATION, new CardBuilder(context, CardBuilder.Layout.ALERT)
                 .setText(R.string.recovery_position_menu_text)
                 .setIcon(R.drawable.ic_person_ko_menu));
-        cards.add(CALL_AMBULANCE, new CardBuilder(context, CardBuilder.Layout.MENU)
+        cards.add(CALL_AMBULANCE, new CardBuilder(context, CardBuilder.Layout.ALERT)
                 .setText(R.string.emergency_call_menu_text)
+                .setFootnote(R.string.emergency_call_menu_footnote)
                 .setIcon(R.drawable.ic_emergency_call_menu));
 
         return cards;
@@ -113,7 +113,8 @@ public final class PersonKoActivity extends Activity {
                 case R.id.menu_back:
                     startActivity(new Intent(PersonKoActivity.this, MainActivity.class));
                     break;
-                default: return true;
+                default:
+                    return true;
             }
             mCardScroller.setAdapter(new CardAdapter(createMenu(this)));
             return true;

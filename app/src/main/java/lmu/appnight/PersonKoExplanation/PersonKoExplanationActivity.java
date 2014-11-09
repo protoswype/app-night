@@ -93,7 +93,9 @@ public final class PersonKoExplanationActivity extends Activity {
         return cards;
     }
 
-    /** Navigates to card at given position. */
+    /**
+     * Navigates to card at given position.
+     */
     private void navigateToCard(int position) {
         mCardScroller.animate(position, CardScrollView.Animation.NAVIGATION);
     }
@@ -115,7 +117,7 @@ public final class PersonKoExplanationActivity extends Activity {
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
 
-            Log.i("PersonKoExplanationActivity", "Log: " +  current_position);
+            Log.i("PersonKoExplanationActivity", "Log: " + current_position);
             switch (current_position) {
 
                 case 0:
@@ -130,7 +132,8 @@ public final class PersonKoExplanationActivity extends Activity {
                     navigateToCard(0);
                     current_position = 0;
                     break;
-                default: return true;
+                default:
+                    return true;
             }
             mCardScroller.setAdapter(new CardAdapter(createMenu(this)));
             return true;
