@@ -43,7 +43,7 @@ import lmu.appnight.PersonKo.PersonKoActivity;
 
 /**
  * Creates a card scroll view with examples of different image layout cards.
-*/
+ */
 public final class MainActivity extends Activity {
 
     private CardScrollAdapter mAdapter;
@@ -96,29 +96,29 @@ public final class MainActivity extends Activity {
 
     /**
      * Creates list of cards that showcase different type of {@link CardBuilder} API.
-    */
+     */
     private List<CardBuilder> createMainMenu(Context context) {
         ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
 
         cards.add(PERSON_KO, new CardBuilder(context, CardBuilder.Layout.MENU)
-                .setText(R.string.person_ko_menu_text)
-                .setIcon(R.drawable.ic_person_ko_menu)
-                );
+                        .setText(R.string.person_ko_menu_text)
+                        .setIcon(R.drawable.ic_person_ko_menu)
+        );
         cards.add(FIRST_AID, new CardBuilder(context, CardBuilder.Layout.MENU)
-                .setText(R.string.first_aid_kit_menu_text)
-                .setIcon(R.drawable.ic_first_aid_kit_menu)
-                );
+                        .setText(R.string.first_aid_kit_menu_text)
+                        .setIcon(R.drawable.ic_first_aid_kit_menu)
+        );
         cards.add(EMERGENCY_EXIT, new CardBuilder(context, CardBuilder.Layout.MENU)
-                .setText(R.string.emergency_exit_menu_text)
-                .setIcon(R.drawable.ic_emergency_exit_menu)
-                );
+                        .setText(R.string.emergency_exit_menu_text)
+                        .setIcon(R.drawable.ic_emergency_exit_menu)
+        );
         cards.add(HUNGRY, new CardBuilder(context, CardBuilder.Layout.MENU)
-                .setText(R.string.hungry_menu_text)
-                .setIcon(R.drawable.ic_hungry_menu)
-                );
+                        .setText(R.string.hungry_menu_text)
+                        .setIcon(R.drawable.ic_hungry_menu)
+        );
         cards.add(IT_SUPPORT, new CardBuilder(context, CardBuilder.Layout.MENU)
                         .setText(R.string.it_support_menu_text)
-                //.setIcon(R.drawable.ic_it_support_menu)
+                        .setIcon(R.drawable.pc6)
         );
 
         return cards;
@@ -135,7 +135,6 @@ public final class MainActivity extends Activity {
         mCardScroller.deactivate();
         super.onPause();
     }
-
 
 
     @Override
@@ -162,7 +161,8 @@ public final class MainActivity extends Activity {
                 case R.id.menu_it_support:
                     startActivity(new Intent(MainActivity.this, ItSupportActivity.class));
                     break;
-                default: return true;
+                default:
+                    return true;
             }
             mCardScroller.setAdapter(new CardAdapter(createMainMenu(this)));
             return true;
@@ -204,7 +204,6 @@ public final class MainActivity extends Activity {
             }
         });
     }
-
 
 
 }

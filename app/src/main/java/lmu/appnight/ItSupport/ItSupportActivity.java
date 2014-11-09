@@ -77,13 +77,13 @@ public final class ItSupportActivity extends Activity {
 
         cards.add(new CardBuilder(context, CardBuilder.Layout.ALERT)
                 .setText(R.string.it_support_network_menu_text)
-                .setIcon(R.drawable._computer170));
+                .setIcon(R.drawable.computer170));
         cards.add(new CardBuilder(context, CardBuilder.Layout.ALERT)
                 .setText(R.string.it_support_printer_menu_text)
-                .setIcon(R.drawable._printer70));
+                .setIcon(R.drawable.printer70));
         cards.add(new CardBuilder(context, CardBuilder.Layout.ALERT)
                 .setText(R.string.it_support_computer_menu_text)
-                .setIcon(R.drawable._pc6));
+                .setIcon(R.drawable.pc6));
 
         return cards;
     }
