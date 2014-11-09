@@ -45,9 +45,9 @@ public final class HungryActivity extends Activity {
         cards.add(new CardBuilder(context, CardBuilder.Layout.COLUMNS)
                 .setText(R.string.hungry_text)
                 .addImage(R.drawable.img_hungry));
-        cards.add(MC_DONALDS, new CardBuilder(context, CardBuilder.Layout.COLUMNS)
+        cards.add(MC_DONALDS, new CardBuilder(context, CardBuilder.Layout.ALERT)
                 .setText(R.string.hungry_mcd_text)
-                .addImage(R.drawable.img_hungry));
+                .setIcon(R.drawable.mcdonalds));
 
         return cards;
     }
