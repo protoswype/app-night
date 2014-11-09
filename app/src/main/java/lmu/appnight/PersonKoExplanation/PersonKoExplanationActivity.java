@@ -81,18 +81,15 @@ public final class PersonKoExplanationActivity extends Activity {
     private List<CardBuilder> createMenu(Context context) {
         ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
 
-        cards.add(STEP1, new CardBuilder(context, CardBuilder.Layout.MENU)
-                .setText(R.string.recovery_position_menu_text)
-                .setIcon(R.drawable.person_ko_check)
-                .setFootnote(R.string.revive_check));
-        cards.add(STEP2, new CardBuilder(context, CardBuilder.Layout.MENU)
+        cards.add(new CardBuilder(context, CardBuilder.Layout.TITLE)
+                .setText(R.string.person_ko_check)
+                .addImage(R.drawable.person_ko_check));
+        cards.add(new CardBuilder(context, CardBuilder.Layout.TITLE)
                 .setText(R.string.emergency_call_menu_text)
-                .setIcon(R.drawable.person_ko_breath)
-                .setFootnote(R.string.revive_breath));
-        cards.add(STEP3, new CardBuilder(context, CardBuilder.Layout.MENU)
-                .setText(R.string.emergency_call_menu_text)
-                .setIcon(R.drawable.person_ko_massage)
-                .setFootnote(R.string.revive_massage));
+                .addImage(R.drawable.person_ko_breath));
+        cards.add(new CardBuilder(context, CardBuilder.Layout.TITLE)
+                .setText(R.string.person_ko_massage)
+                .addImage(R.drawable.person_ko_massage));
         return cards;
     }
 

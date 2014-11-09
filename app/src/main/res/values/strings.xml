@@ -33,6 +33,11 @@
 
     <string name="recovery_position_menu_text">Reanimation</string>
 
+    <string name="person_ko_check">Check Person's breath</string>
+    <string name="person_ko_breath">Ventilate Person</string>
+    <string name="person_ko_massage">Do Heart Massage</string>
+
+
     <string name="emergency_call_menu_text">Emergency Call</string>
 
     <string name="it_support_menu_text">IT Support</string>
