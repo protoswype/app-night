@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="voice_trigger">Help me!</string>
+    <string name="person_ko_trigger">Person not breathing</string>
+    <string name="first_aid_kit_trigger">First Aid Kit</string>
+    <string name="emergency_exit_trigger">Emergency Exit</string>
+    <string name="hungry_trigger">I\'m starving</string>
+    <string name="it_support_trigger">IT Support</string>
+    <string name="person_ko_reanimation_trigger">Reanimation</string>
+    <string name="person_ko_emergency_trigger">Video Call Emergency</string>
+    <string name="menu_next_trigger">Next</string>
+
+    <string name="app_name">Appnight</string>
+    <string name="main_menu_app_name">Help</string>
+    <string name="menu_go_back">Go back</string>
+
+    <string name="person_ko_menu_text">Person K.O.</string>
+    <string name="person_ko_menu_desc">Help a person that is not breathing.</string>
+
+    <string name="revive_check">Person K.O.</string>
+    <string name="revive_breath">Help a person which is not breathing.</string>
+    <string name="revive_massage">Help a person which is not breathing.</string>
+
+    <string name="hungry_menu_text">I\'m Starving!</string>
+    <string name="hungry_text">Just grab some of the fabulous free food at the Lichthof. Open daily from 8.30 am to 1.30 am!</string>
+    <string name="hungry_mcd_text">Find the next McDonalds!</string>
+
+    <string name="first_aid_kit_menu_text">First Aid</string>
+    <string name="first_aid_kit_menu_desc">Where can I find a first aid kit?</string>
+    <string name="first_aid_main_entrance_text">You will find a first aid kit at the information desk at the main entrance.</string>
+
+    <string name="emergency_exit_menu_text">Emergency Exit</string>
+
+    <string name="recovery_position_menu_text">Reanimation</string>
+
+    <string name="person_ko_check">Check breath</string>
+    <string name="person_ko_breath">Ventilate Person</string>
+    <string name="person_ko_massage">Do Heart Massage</string>
+
+
+    <string name="emergency_call_menu_text">Emergency Call</string>
+
+    <string name="it_support_menu_text">IT Support</string>
+    <string name="it_support_network_menu_text">Network Issues</string>
+    <string name="it_support_printer_menu_text">Printer Issues</string>
+    <string name="it_support_computer_menu_text">Computer Issues</string>
+
+    <string name="emergency_call_menu_footnote">Video Call Emergency</string>
+
+</resources>

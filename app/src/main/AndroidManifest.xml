@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lmu.appnight">
+
+    <uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/layout"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="lmu.appnight.MainActivity"
+            android:icon="@drawable/layout"
+            android:label="@string/main_menu_app_name">
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name=".PersonKo.PersonKoActivity"
+            android:icon="@drawable/ic_person_ko_menu"
+            android:label="@string/person_ko_trigger">
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+                <action android:name="android.intent.action.DIAL" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/main_voice_trigger" />
+        </activity>
+
+        <activity
+            android:name=".PersonKoExplanation.PersonKoExplanationActivity"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="@string/person_ko_menu_text"></activity>
+
+        <activity
+            android:name=".FirstAidKit.FirstAidKitActivity"
+            android:icon="@drawable/ic_first_aid_kit_menu"
+            android:label="@string/first_aid_kit_trigger">
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/main_voice_trigger" />
+        </activity>
+        <activity
+            android:name=".Hungry.HungryActivity"
+            android:icon="@drawable/ic_hungry_menu"
+            android:label="@string/hungry_trigger">
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/main_voice_trigger" />
+        </activity>
+        <activity
+            android:name=".ItSupport.ItSupportActivity"
+            android:icon="@drawable/pc6"
+            android:label="@string/it_support_trigger">
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/main_voice_trigger" />
+        </activity>
+
+
+    </application>
+
+</manifest>

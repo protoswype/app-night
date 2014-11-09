@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Menu item without a sub menu. -->
+    <item
+        android:id="@+id/menu_person_ko"
+        android:title="@string/person_ko_trigger"
+        />
+    <!-- Menu item with a sub menu. -->
+    <item
+        android:id="@+id/menu_first_aid"
+        android:title="@string/first_aid_kit_trigger"
+    />
+    <!-- Menu item without a sub menu. -->
+    <item
+        android:id="@+id/menu_hungry"
+        android:title="@string/hungry_trigger"
+    />
+    <!-- Menu item without a sub menu. -->
+    <item
+        android:id="@+id/menu_it_support"
+        android:title="@string/it_support_trigger"
+        />
+
+</menu>
