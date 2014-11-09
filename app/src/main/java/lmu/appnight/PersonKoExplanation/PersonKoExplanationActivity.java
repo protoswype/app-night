@@ -85,7 +85,7 @@ public final class PersonKoExplanationActivity extends Activity {
                 .setText(R.string.person_ko_check)
                 .addImage(R.drawable.person_ko_check));
         cards.add(new CardBuilder(context, CardBuilder.Layout.TITLE)
-                .setText(R.string.emergency_call_menu_text)
+                .setText(R.string.person_ko_breath)
                 .addImage(R.drawable.person_ko_breath));
         cards.add(new CardBuilder(context, CardBuilder.Layout.TITLE)
                 .setText(R.string.person_ko_massage)
