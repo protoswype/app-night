@@ -107,22 +107,10 @@ public final class PersonKoExplanationActivity extends Activity {
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS) {
-            switch (current_position) {
-                case 0:
-                    navigateToCard(1);
-                    current_position = 1;
-                    break;
-                case 1:
-                    navigateToCard(2);
-                    current_position = 2;
-                    break;
-                case 2:
-                    navigateToCard(0);
-                    current_position = 0;
-                    break;
-                default:
-                    return true;
-            }
+            if(current_position == 2)
+                current_position = -1;
+
+            navigateToCard(++current_position);
             mCardScroller.setAdapter(new CardAdapter(createMenu(this)));
             return true;
         }
