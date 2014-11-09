@@ -75,18 +75,15 @@ public final class ItSupportActivity extends Activity {
     private List<CardBuilder> createMenu(Context context) {
         ArrayList<CardBuilder> cards = new ArrayList<CardBuilder>();
 
-        cards.add(new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText(R.string.it_support_network_menu_text)
-                //.setIcon(R.drawable.ic_it_support_network_menu)
-        );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText(R.string.it_support_printer_menu_text)
-                //.setIcon(R.drawable.ic_it_support_printer_menu)
-        );
-        cards.add(new CardBuilder(context, CardBuilder.Layout.MENU)
-                        .setText(R.string.it_support_computer_menu_text)
-                //.setIcon(R.drawable.ic_it_support_computer_menu)
-        );
+        cards.add(new CardBuilder(context, CardBuilder.Layout.ALERT)
+                .setText(R.string.it_support_network_menu_text)
+                .setIcon(R.drawable._computer170));
+        cards.add(new CardBuilder(context, CardBuilder.Layout.ALERT)
+                .setText(R.string.it_support_printer_menu_text)
+                .setIcon(R.drawable._printer70));
+        cards.add(new CardBuilder(context, CardBuilder.Layout.ALERT)
+                .setText(R.string.it_support_computer_menu_text)
+                .setIcon(R.drawable._pc6));
 
         return cards;
     }
