@@ -193,6 +193,9 @@ public final class MainActivity extends Activity {
                     case HUNGRY:
                         startActivity(new Intent(MainActivity.this, HungryActivity.class));
                         break;
+                    case IT_SUPPORT:
+                        startActivity(new Intent(MainActivity.this, ItSupportActivity.class));
+                        break;
                     default:
                         soundEffect = Sounds.ERROR;
                         //Log.d(TAG, "Don't show anything");
